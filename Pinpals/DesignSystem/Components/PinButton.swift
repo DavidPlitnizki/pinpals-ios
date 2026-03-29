@@ -53,3 +53,14 @@ struct PinButton: View {
         }
     }
 }
+
+#Preview {
+    VStack(spacing: PinSpacing.space4) {
+        PinButton(title: "Primary", icon: "plus", style: .primary) {}
+        PinButton(title: "Secondary", icon: "bookmark", style: .secondary) {}
+        PinButton(title: "Outline", icon: "heart", style: .outline) {}
+        PinButton(title: "Full Width", style: .primary, isFullWidth: true) {}
+    }
+    .padding()
+    .background(Color.Pin.neutral50)
+}

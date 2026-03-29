@@ -126,3 +126,10 @@ struct CreateMeetingScreen: View {
         return calendar.date(from: combined) ?? date
     }
 }
+
+#Preview {
+    NavigationStack {
+        CreateMeetingScreen()
+    }
+    .modelContainer(for: [Meeting.self], inMemory: true)
+}

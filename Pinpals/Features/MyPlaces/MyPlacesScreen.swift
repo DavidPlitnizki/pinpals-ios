@@ -65,3 +65,10 @@ struct MyPlacesScreen: View {
         }
     }
 }
+
+#Preview {
+    NavigationStack {
+        MyPlacesScreen()
+    }
+    .environment(Router())
+}

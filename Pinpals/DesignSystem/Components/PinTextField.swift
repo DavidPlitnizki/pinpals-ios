@@ -25,3 +25,12 @@ struct PinTextField: View {
         }
     }
 }
+
+#Preview {
+    VStack(spacing: PinSpacing.space3) {
+        PinTextField(placeholder: "Search places...", text: .constant(""), icon: "magnifyingglass")
+        PinTextField(placeholder: "Meeting name", text: .constant("Weekend Hike"))
+    }
+    .padding()
+    .background(Color.Pin.neutral50)
+}

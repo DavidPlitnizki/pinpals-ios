@@ -107,3 +107,10 @@ struct ProfileScreen: View {
         }
     }
 }
+
+#Preview {
+    NavigationStack {
+        ProfileScreen()
+    }
+    .modelContainer(for: [Place.self], inMemory: true)
+}

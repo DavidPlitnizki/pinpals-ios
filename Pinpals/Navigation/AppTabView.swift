@@ -1,4 +1,5 @@
 import SwiftUI
+import SwiftData
 
 enum AppTab: Hashable {
     case map, explore, myPlaces, chat
@@ -84,4 +85,10 @@ private func destinationView(for destination: Destination) -> some View {
     case .editPlace(let id):
         PlaceDetailScreen(placeId: id)
     }
+}
+
+#Preview {
+    AppTabView()
+        .environment(LocationService())
+        .modelContainer(for: [Place.self, PlaceNote.self, Meeting.self, UserProfile.self], inMemory: true)
 }

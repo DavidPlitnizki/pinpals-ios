@@ -26,3 +26,13 @@ struct PinChip: View {
         .buttonStyle(.plain)
     }
 }
+
+#Preview {
+    HStack(spacing: PinSpacing.space2) {
+        PinChip(title: "All", isSelected: true)
+        PinChip(title: "Food", isSelected: false)
+        PinChip(title: "Nature", isSelected: false)
+    }
+    .padding()
+    .background(Color.Pin.neutral50)
+}

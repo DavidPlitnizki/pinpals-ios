@@ -134,3 +134,26 @@ struct PlaceDetailScreen: View {
         .clipShape(RoundedRectangle(cornerRadius: PinRadius.sm))
     }
 }
+
+#Preview {
+    let config = ModelConfiguration(isStoredInMemoryOnly: true)
+    let container = try! ModelContainer(for: Place.self, PlaceNote.self, configurations: config)
+    let place = Place(
+        name: "Botanical Gardens",
+        descriptionText: "A serene botanical paradise featuring exotic plants and peaceful water features.",
+        address: "123 Garden Ave, Green District",
+        latitude: 55.75,
+        longitude: 37.61,
+        category: .nature,
+        rating: 4,
+        status: .visited,
+        hours: "Mon-Sun, 8:00 AM – 8:00 PM"
+    )
+    let note = PlaceNote(text: "The orchid section was breathtaking! Must come back during the tulip season in April.")
+    place.notes.append(note)
+    container.mainContext.insert(place)
+    return NavigationStack {
+        PlaceDetailScreen(placeId: place.id)
+    }
+    .modelContainer(container)
+}

@@ -19,3 +19,14 @@ struct PinRatingView: View {
         }
     }
 }
+
+#Preview {
+    VStack(spacing: PinSpacing.space4) {
+        PinRatingView(rating: 0)
+        PinRatingView(rating: 3)
+        PinRatingView(rating: 5)
+        PinRatingView(rating: 4, size: 20)
+    }
+    .padding()
+    .background(Color.Pin.neutral50)
+}

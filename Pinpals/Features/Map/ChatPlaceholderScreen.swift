@@ -12,3 +12,7 @@ struct ChatPlaceholderScreen: View {
         }
     }
 }
+
+#Preview {
+    ChatPlaceholderScreen()
+}

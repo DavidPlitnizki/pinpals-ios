@@ -41,3 +41,10 @@ struct ExploreScreen: View {
         .navigationTitle("Explore")
     }
 }
+
+#Preview {
+    NavigationStack {
+        ExploreScreen()
+    }
+    .environment(Router())
+}
